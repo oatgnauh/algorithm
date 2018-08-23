@@ -1,3 +1,5 @@
 *.out
-*.vscode/*
 *.cpp_O
+.vscode/*
+
+
