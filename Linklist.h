@@ -57,6 +57,7 @@ void RemoveNode(ListNode **pHead, int value)
     }
 }
 
+//从尾部开始输出节点元素
 void PrintListReverse(ListNode *head)
 {
     std::stack<ListNode *> Nodes;
