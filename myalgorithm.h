@@ -4,7 +4,7 @@
 #include <unordered_set>
 #include <map>
 #include <unordered_map>
-#include <string>
+#include <string.h>
 #include <math.h>
 #include <ctype.h>
 using namespace std;
@@ -399,4 +399,30 @@ bool Find(int target, vector<vector<int> > array) {
             rows++;
     }
     return false;
+}
+
+void replaceSpace(char *str,int length) {
+    int space = 0;
+    for(char *iter =str; *iter != '\0';iter++)
+    {
+        if(*iter == ' ')
+            space ++;
+    }
+    int p1=length;
+    int p2 = length + space*2;
+    char newStr[p2 + 1];
+    while(p1>=0)
+    {
+        if(str[p1] != ' ')
+            newStr[p2--] = str[p1];
+        else
+        {
+            newStr[p2--] = '0';
+            newStr[p2--] = '2';
+            newStr[p2--] = '%';
+        }
+        p1--;
+    }
+    printf("%s",newStr);
+    str = newStr;
 }
